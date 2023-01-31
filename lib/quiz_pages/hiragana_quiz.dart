@@ -122,10 +122,10 @@ List<Hiragana> hiraganaList = [
 class HiraganaQuizPage extends StatefulWidget {
   const HiraganaQuizPage({Key? key}) : super(key: key);
   @override
-  _LearnFlutterPageState createState() => _LearnFlutterPageState();
+  _HiraganaQuizPageState createState() => _HiraganaQuizPageState();
 }
 
-class _LearnFlutterPageState extends State<HiraganaQuizPage> {
+class _HiraganaQuizPageState extends State<HiraganaQuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -237,7 +237,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                       hiraganaList[rngIndex[index].toInt()]
                                           .en) {
                                     if (lives == 1) {
-                                      Navigator.of(context).push(
+                                      Navigator.of(context).pushReplacement(
                                         MaterialPageRoute(
                                           builder: (BuildContext context) {
                                             return const DefeatPage();

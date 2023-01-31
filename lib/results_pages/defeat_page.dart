@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/main.dart';
 
 class DefeatPage extends StatefulWidget {
   const DefeatPage({Key? key}) : super(key: key);
   @override
-  _LearnFlutterPageState createState() => _LearnFlutterPageState();
+  _DefeatPageState createState() => _DefeatPageState();
 }
 
-class _LearnFlutterPageState extends State<DefeatPage> {
+class _DefeatPageState extends State<DefeatPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,9 +16,15 @@ class _LearnFlutterPageState extends State<DefeatPage> {
         automaticallyImplyLeading: false,
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return const MyApp();
+                },
+              ),
+            );
           },
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.home),
         ),
       ),
       body: const DefeatScreen(),
@@ -29,18 +36,40 @@ class DefeatScreen extends StatelessWidget {
   const DefeatScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: const [
-        Expanded(
-          child: Text(
-            "You Have Run Out of Hearts",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 45.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Row(
+            children: const [
+              Expanded(
+                flex: 2,
+                child: Text(
+                  "You Have Run Out of Hearts",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 45.0),
+                ),
+              ),
+            ],
           ),
-        ),
-      ],
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const MyApp();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              child: const Text('Go Home'),
+              padding: const EdgeInsets.all(10.0),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

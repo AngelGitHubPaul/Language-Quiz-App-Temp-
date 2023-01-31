@@ -121,10 +121,10 @@ final List<Katakana> katakanaList = [
 class KatakanaQuizPage extends StatefulWidget {
   const KatakanaQuizPage({Key? key}) : super(key: key);
   @override
-  _LearnFlutterPageState createState() => _LearnFlutterPageState();
+  _KatakanaQuizPageState createState() => _KatakanaQuizPageState();
 }
 
-class _LearnFlutterPageState extends State<KatakanaQuizPage> {
+class _KatakanaQuizPageState extends State<KatakanaQuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

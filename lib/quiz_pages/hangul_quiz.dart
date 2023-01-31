@@ -92,10 +92,10 @@ List<String> alphabet = [
 class HangulQuizPage extends StatefulWidget {
   const HangulQuizPage({Key? key}) : super(key: key);
   @override
-  _LearnFlutterPageState createState() => _LearnFlutterPageState();
+  _HangulQuizPageState createState() => _HangulQuizPageState();
 }
 
-class _LearnFlutterPageState extends State<HangulQuizPage> {
+class _HangulQuizPageState extends State<HangulQuizPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
