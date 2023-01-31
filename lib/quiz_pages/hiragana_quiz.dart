@@ -3,6 +3,7 @@ import 'package:helloworld/controller.dart';
 import 'dart:math';
 
 import 'package:helloworld/results_pages/defeat_page.dart';
+import 'package:helloworld/results_pages/victory_page.dart';
 
 class Hiragana {
   final String jp;
@@ -272,7 +273,11 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                             curve: Curves.easeInExpo);
                                         _questionNumber++;
                                       } else {
-                                        Navigator.of(context).pop();
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(builder:
+                                                (BuildContext context) {
+                                          return const VictoryPage();
+                                        }));
                                       }
                                     }
                                   });
