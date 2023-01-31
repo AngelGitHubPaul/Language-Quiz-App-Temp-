@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/controller.dart';
 import 'dart:math';
 
 import 'package:helloworld/results_pages/defeat_page.dart';
@@ -90,7 +89,7 @@ List<Hiragana> hiraganaList = [
   Hiragana(jp: 'きょ', en: 'kyo'),
   Hiragana(jp: 'しゃ', en: 'sha'),
   Hiragana(jp: 'しゅ', en: 'shu'),
-  Hiragana(jp: 'sho', en: 'しょ'),
+  Hiragana(jp: 'しょ', en: 'sho'),
   Hiragana(jp: 'ちゃ', en: 'cha'),
   Hiragana(jp: 'ちゅ', en: 'chu'),
   Hiragana(jp: 'ちょ', en: 'cho'),
@@ -200,6 +199,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                 controller: _controller,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (content, index) {
+                  final formKey = GlobalKey<FormState>();
                   return Column(
                     children: [
                       Row(
@@ -260,8 +260,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                 height: 20.0,
                               ),
                               ElevatedButton(
-                                child: Text(
-                                    _questionNumber < 10 ? 'Submit' : 'Finish'),
+                                child: const Text('Submit'),
                                 onPressed: () {
                                   setState(() {
                                     if (formKey.currentState!.validate()) {

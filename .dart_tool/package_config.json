@@ -86,8 +86,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/lance/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///C:/Users/lance/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.8.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/lance/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -146,7 +158,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-01-30T11:35:32.885952Z",
+  "generated": "2023-01-31T06:56:25.253676Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }

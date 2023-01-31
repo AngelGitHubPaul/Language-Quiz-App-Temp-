@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/currency.dart';
+import 'package:helloworld/custimization_page.dart';
 import 'package:helloworld/home_page.dart';
 import 'package:helloworld/review_page.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => MyCurrency(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -37,7 +41,11 @@ class Trial extends StatefulWidget {
 
 class _TrialState extends State<Trial> {
   int currentPage = 0;
-  List<Widget> pages = const [HomePage(), ReviewPage()];
+  List<Widget> pages = const [
+    HomePage(),
+    ReviewPage(),
+    CustomizationPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +61,7 @@ class _TrialState extends State<Trial> {
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
           NavigationDestination(
               icon: Icon(Icons.article_outlined), label: 'Review'),
+          NavigationDestination(icon: Icon(Icons.settings), label: 'Customize'),
         ],
         onDestinationSelected: (int index) {
           setState(() {
