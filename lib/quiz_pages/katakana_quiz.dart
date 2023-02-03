@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/controller.dart';
 import 'dart:math';
+
+import 'package:helloworld/quiz_pages/results_pages/defeat_page.dart';
+import 'package:helloworld/quiz_pages/results_pages/victory_page.dart';
+import 'package:provider/provider.dart';
+import '../providers/lives.dart';
 
 var rng = Random();
 
@@ -172,11 +176,22 @@ class _QuestionWidgetState extends State<QuestionWidget> {
 
   @override
   Widget build(BuildContext context) {
+    int lives = Provider.of<Lives>(context).lives;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
         children: [
           const Padding(padding: EdgeInsets.symmetric(horizontal: 16.0)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Icon(Icons.favorite, size: 28.0),
+              Text(
+                "$lives",
+                style: const TextStyle(fontSize: 28.0),
+              ),
+            ],
+          ),
           Text(
             'Question $_questionNumber/10',
             style: const TextStyle(fontSize: 32.0),
@@ -187,6 +202,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                 controller: _controller,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (content, index) {
+                  final formKey = GlobalKey<FormState>();
                   return Column(
                     children: [
                       Row(
@@ -224,6 +240,19 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                   } else if (value !=
                                       katakanaList[rngIndex[index].toInt()]
                                           .en) {
+                                    if (lives == 1) {
+                                      Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                          builder: (BuildContext context) {
+                                            return const DefeatPage();
+                                          },
+                                        ),
+                                      );
+                                    } else {
+                                      Provider.of<Lives>(context, listen: false)
+                                          .decreaseLives();
+                                    }
+                                    _textController.clear();
                                     return 'wrong answer please try again';
                                   }
                                   return null;
@@ -248,7 +277,11 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                             curve: Curves.easeInExpo);
                                         _questionNumber++;
                                       } else {
-                                        Navigator.of(context).pop();
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(builder:
+                                                (BuildContext context) {
+                                          return const VictoryPage();
+                                        }));
                                       }
                                     }
                                   });

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:helloworld/results_pages/defeat_page.dart';
-import 'package:helloworld/results_pages/victory_page.dart';
+import 'package:helloworld/quiz_pages/results_pages/defeat_page.dart';
+import 'package:helloworld/quiz_pages/results_pages/victory_page.dart';
+import 'package:provider/provider.dart';
+import '../providers/lives.dart';
 
 class Hiragana {
   final String jp;
@@ -174,6 +176,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
 
   @override
   Widget build(BuildContext context) {
+    int lives = Provider.of<Lives>(context).lives;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
@@ -246,7 +249,8 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                         ),
                                       );
                                     } else {
-                                      lives = lives - 1;
+                                      Provider.of<Lives>(context, listen: false)
+                                          .decreaseLives();
                                     }
                                     _textController.clear();
                                     return 'wrong answer please try again';

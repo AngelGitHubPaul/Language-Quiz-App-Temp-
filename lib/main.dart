@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:helloworld/custimization_page.dart';
 import 'package:helloworld/home_page.dart';
 import 'package:helloworld/providers/currency.dart';
+import 'package:helloworld/providers/lives.dart';
 import 'package:helloworld/review_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-      create: (context) => MyCurrency(), child: const MyApp()));
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context) => MyCurrency()),
+      ChangeNotifierProvider(create: (context) => Lives()),
+    ], child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {

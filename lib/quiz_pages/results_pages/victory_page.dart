@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/main.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/lives.dart';
 
 class VictoryPage extends StatefulWidget {
   const VictoryPage({Key? key}) : super(key: key);
@@ -16,6 +19,7 @@ class _VictoryPageState extends State<VictoryPage> {
         automaticallyImplyLeading: false,
         leading: IconButton(
           onPressed: () {
+            Provider.of<Lives>(context, listen: false).resetLives();
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
                 builder: (BuildContext context) {
@@ -55,6 +59,7 @@ class DefeatScreen extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
+              Provider.of<Lives>(context, listen: false).resetLives();
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (BuildContext context) {
