@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/currency.dart';
 import 'package:helloworld/custimization_page.dart';
 import 'package:helloworld/home_page.dart';
+import 'package:helloworld/providers/currency.dart';
 import 'package:helloworld/review_page.dart';
 import 'package:provider/provider.dart';
 
