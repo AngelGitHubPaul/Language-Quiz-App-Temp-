@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/review_pages/greek_review.dart';
 import 'package:helloworld/review_pages/hangul_review.dart';
 import 'package:helloworld/review_pages/hiragana_review.dart';
 import 'package:helloworld/review_pages/katakana_review.dart';
+import 'package:helloworld/review_pages/russian_review.dart';
 
 class Languages {
   final String lang;
@@ -15,6 +17,8 @@ final List<Languages> languages = [
   Languages(lang: 'ア', en: 'Katakana'),
   Languages(lang: 'ᜀ', en: 'Alibata'),
   Languages(lang: '아', en: 'Hangul'),
+  Languages(lang: 'Бб', en: 'Russian'),
+  Languages(lang: 'Α α', en: 'Greek'),
 ];
 
 class ReviewPage extends StatelessWidget {
@@ -58,6 +62,28 @@ class ReviewPage extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (BuildContext context) {
                       return const HangulReviewPage();
+                    },
+                  ),
+                );
+              }
+              break;
+            case 4:
+              {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const RussianReviewPage();
+                    },
+                  ),
+                );
+              }
+              break;
+            case 5:
+              {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const GreekReviewPage();
                     },
                   ),
                 );

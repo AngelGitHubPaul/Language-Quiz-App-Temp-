@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/quiz_pages/greek_quiz.dart';
 import 'package:helloworld/quiz_pages/hangul_quiz.dart';
 import 'package:helloworld/quiz_pages/hiragana_quiz.dart';
 import 'package:helloworld/quiz_pages/katakana_quiz.dart';
+import 'package:helloworld/quiz_pages/russian_quiz.dart';
 
 class Languages {
   final String lang;
@@ -15,6 +17,8 @@ final List<Languages> languages = [
   Languages(lang: 'ア', en: 'Katakana'),
   Languages(lang: 'ᜀ', en: 'Alibata'),
   Languages(lang: '아', en: 'Hangul'),
+  Languages(lang: 'Бб', en: 'Russian'),
+  Languages(lang: 'Α α', en: 'Greek'),
 ];
 
 class QuizPage extends StatefulWidget {
@@ -82,6 +86,28 @@ class LanguageOptions extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (BuildContext context) {
                       return const HangulQuizPage();
+                    },
+                  ),
+                );
+              }
+              break;
+            case 4:
+              {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const RussianQuizPage();
+                    },
+                  ),
+                );
+              }
+              break;
+            case 5:
+              {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const GreekQuizPage();
                     },
                   ),
                 );
