@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:helloworld/quiz_pages/results_pages/defeat_page.dart';
 import 'package:helloworld/quiz_pages/results_pages/victory_page.dart';
 import 'package:provider/provider.dart';
+import '../providers/currency.dart';
 import '../providers/lives.dart';
 
 var rng = Random();
@@ -247,6 +248,22 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                             curve: Curves.easeInExpo);
                                         _questionNumber++;
                                       } else {
+                                        if (lives == 3) {
+                                          Provider.of<MyCurrency>(context,
+                                                  listen: false)
+                                              .addCurrency(15);
+                                        } else if (lives == 2) {
+                                          Provider.of<MyCurrency>(context,
+                                                  listen: false)
+                                              .addCurrency(13);
+                                        } else {
+                                          Provider.of<MyCurrency>(context,
+                                                  listen: false)
+                                              .addCurrency(10);
+                                        }
+                                        Provider.of<Lives>(context,
+                                                listen: false)
+                                            .resetLives();
                                         Navigator.of(context).pushReplacement(
                                             MaterialPageRoute(builder:
                                                 (BuildContext context) {

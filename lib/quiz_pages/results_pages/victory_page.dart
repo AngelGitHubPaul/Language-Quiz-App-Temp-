@@ -40,6 +40,7 @@ class DefeatScreen extends StatelessWidget {
   const DefeatScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    int mistakes = 3 - Provider.of<Lives>(context).lives;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
@@ -57,9 +58,40 @@ class DefeatScreen extends StatelessWidget {
               ),
             ],
           ),
+          Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Text(
+                  mistakes == 0
+                      ? "You have made no mistakes. Keep up the good work!"
+                      : mistakes == 1
+                          ? "You have made $mistakes mistake. Keep up the good work!"
+                          : "You have made $mistakes mistakes. Keep up the good work!",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 30.0),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Text(
+                  mistakes == 0
+                      ? "+15 Gold"
+                      : mistakes == 1
+                          ? "+13 Gold"
+                          : "+10 Gold",
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 30.0),
+                ),
+              ),
+            ],
+          ),
           ElevatedButton(
             onPressed: () {
-              Provider.of<Lives>(context, listen: false).resetLives();
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (BuildContext context) {
