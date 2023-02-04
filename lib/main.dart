@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:polylingo_app/custimization_page.dart';
+import 'package:polylingo_app/customization_page.dart';
 import 'package:polylingo_app/home_page.dart';
 import 'package:polylingo_app/providers/currency.dart';
 import 'package:polylingo_app/providers/lives.dart';
@@ -54,12 +54,6 @@ class _TrialState extends State<Trial> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: const Text(
-          'Polylingo App',
-        ),
-      ),
       body: pages[currentPage],
       bottomNavigationBar: NavigationBar(
         destinations: const [
