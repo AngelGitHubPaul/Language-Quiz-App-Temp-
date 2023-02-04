@@ -88,7 +88,7 @@ final List<Hiragana> hiragana = [
   Hiragana(jp: 'きょ', en: 'kyo'),
   Hiragana(jp: 'しゃ', en: 'sha'),
   Hiragana(jp: 'しゅ', en: 'shu'),
-  Hiragana(jp: 'sho', en: 'しょ'),
+  Hiragana(jp: 'しょ', en: 'sho'),
   Hiragana(jp: 'ちゃ', en: 'cha'),
   Hiragana(jp: 'ちゅ', en: 'chu'),
   Hiragana(jp: 'ちょ', en: 'cho'),

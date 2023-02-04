@@ -84,7 +84,7 @@ List<Hiragana> hiraganaList = [
   Hiragana(jp: 'ぼ', en: 'bo'),
   Hiragana(jp: 'ぱ', en: 'pa'),
   Hiragana(jp: 'ぴ', en: 'pi'),
-  Hiragana(jp: 'ぼ', en: 'pu'),
+  Hiragana(jp: 'ぷ', en: 'pu'),
   Hiragana(jp: 'ぺ', en: 'pe'),
   Hiragana(jp: 'ぽ', en: 'po'),
   Hiragana(jp: 'きゃ', en: 'kya'),
