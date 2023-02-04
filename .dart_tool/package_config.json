@@ -152,13 +152,13 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "helloworld",
+      "name": "polylingo_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-01-31T06:56:25.253676Z",
+  "generated": "2023-02-04T07:32:04.514271Z",
   "generator": "pub",
   "generatorVersion": "2.19.0"
 }

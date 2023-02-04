@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/custimization_page.dart';
-import 'package:helloworld/home_page.dart';
-import 'package:helloworld/providers/currency.dart';
-import 'package:helloworld/providers/lives.dart';
-import 'package:helloworld/review_page.dart';
+import 'package:polylingo_app/custimization_page.dart';
+import 'package:polylingo_app/home_page.dart';
+import 'package:polylingo_app/providers/currency.dart';
+import 'package:polylingo_app/providers/lives.dart';
+import 'package:polylingo_app/review_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Application name
-      title: 'Flutter Hello World',
+      title: 'Polylingo App',
       // Application theme data, you can set the colors for the application as
       // you want
       theme: ThemeData(
@@ -57,7 +57,7 @@ class _TrialState extends State<Trial> {
       appBar: AppBar(
         // The title text which will be shown on the action bar
         title: const Text(
-          'Language Quiz App',
+          'Polylingo App',
         ),
       ),
       body: pages[currentPage],

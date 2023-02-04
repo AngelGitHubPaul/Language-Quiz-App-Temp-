@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/providers/currency.dart';
+import 'package:polylingo_app/providers/currency.dart';
 import 'package:provider/provider.dart';
 
 class CustomizationPage extends StatelessWidget {

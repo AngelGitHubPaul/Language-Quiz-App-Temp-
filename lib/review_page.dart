@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/review_pages/greek_review.dart';
-import 'package:helloworld/review_pages/hangul_review.dart';
-import 'package:helloworld/review_pages/hiragana_review.dart';
-import 'package:helloworld/review_pages/katakana_review.dart';
-import 'package:helloworld/review_pages/russian_review.dart';
+import 'package:polylingo_app/review_pages/greek_review.dart';
+import 'package:polylingo_app/review_pages/hangul_review.dart';
+import 'package:polylingo_app/review_pages/hiragana_review.dart';
+import 'package:polylingo_app/review_pages/katakana_review.dart';
+import 'package:polylingo_app/review_pages/russian_review.dart';
 
 class Languages {
   final String lang;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import 'package:helloworld/quiz_pages/results_pages/defeat_page.dart';
-import 'package:helloworld/quiz_pages/results_pages/victory_page.dart';
+import 'package:polylingo_app/quiz_pages/results_pages/defeat_page.dart';
+import 'package:polylingo_app/quiz_pages/results_pages/victory_page.dart';
 import 'package:provider/provider.dart';
 import '../providers/currency.dart';
 import '../providers/lives.dart';

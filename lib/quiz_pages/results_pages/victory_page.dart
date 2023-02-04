@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/main.dart';
+import 'package:polylingo_app/main.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/lives.dart';

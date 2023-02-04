@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/providers/currency.dart';
+import 'package:polylingo_app/providers/currency.dart';
 import 'dart:math';
 
-import 'package:helloworld/quiz_pages/results_pages/defeat_page.dart';
-import 'package:helloworld/quiz_pages/results_pages/victory_page.dart';
+import 'package:polylingo_app/quiz_pages/results_pages/defeat_page.dart';
+import 'package:polylingo_app/quiz_pages/results_pages/victory_page.dart';
 import 'package:provider/provider.dart';
 import '../providers/lives.dart';
 

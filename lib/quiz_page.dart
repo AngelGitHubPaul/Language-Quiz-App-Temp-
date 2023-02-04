@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/quiz_pages/greek_quiz.dart';
-import 'package:helloworld/quiz_pages/hangul_quiz.dart';
-import 'package:helloworld/quiz_pages/hiragana_quiz.dart';
-import 'package:helloworld/quiz_pages/katakana_quiz.dart';
-import 'package:helloworld/quiz_pages/russian_quiz.dart';
+import 'package:polylingo_app/quiz_pages/greek_quiz.dart';
+import 'package:polylingo_app/quiz_pages/hangul_quiz.dart';
+import 'package:polylingo_app/quiz_pages/hiragana_quiz.dart';
+import 'package:polylingo_app/quiz_pages/katakana_quiz.dart';
+import 'package:polylingo_app/quiz_pages/russian_quiz.dart';
 
 class Languages {
   final String lang;
