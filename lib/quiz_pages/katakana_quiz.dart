@@ -152,6 +152,7 @@ class _KatakanaQuizPageState extends State<KatakanaQuizPage> {
               )),
         ],
       ),
+      resizeToAvoidBottomInset: false,
       body: const QuestionWidget(),
     );
   }

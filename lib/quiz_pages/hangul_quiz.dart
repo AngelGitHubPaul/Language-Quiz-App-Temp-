@@ -123,6 +123,7 @@ class _HangulQuizPageState extends State<HangulQuizPage> {
               )),
         ],
       ),
+      resizeToAvoidBottomInset: false,
       body: const QuestionWidget(),
     );
   }

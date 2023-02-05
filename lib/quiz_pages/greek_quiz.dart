@@ -91,6 +91,7 @@ class _GreekQuizPageState extends State<GreekQuizPage> {
               )),
         ],
       ),
+      resizeToAvoidBottomInset: false,
       body: const QuestionWidget(),
     );
   }

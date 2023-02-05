@@ -103,6 +103,7 @@ class _RussianQuizPageState extends State<RussianQuizPage> {
               )),
         ],
       ),
+      resizeToAvoidBottomInset: false,
       body: const QuestionWidget(),
     );
   }

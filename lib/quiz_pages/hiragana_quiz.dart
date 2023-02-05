@@ -151,6 +151,7 @@ class _HiraganaQuizPageState extends State<HiraganaQuizPage> {
               )),
         ],
       ),
+      resizeToAvoidBottomInset: false,
       body: const QuestionWidget(),
     );
   }
