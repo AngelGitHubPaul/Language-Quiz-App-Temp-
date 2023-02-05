@@ -77,6 +77,7 @@ class _GreekQuizPageState extends State<GreekQuizPage> {
         automaticallyImplyLeading: false,
         leading: IconButton(
           onPressed: () {
+            Provider.of<Lives>(context, listen: false).resetLives();
             Navigator.of(context).pop();
           },
           icon: const Icon(Icons.arrow_back),
@@ -230,9 +231,6 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                                                   listen: false)
                                               .addCurrency(10);
                                         }
-                                        Provider.of<Lives>(context,
-                                                listen: false)
-                                            .resetLives();
                                         Navigator.of(context).pushReplacement(
                                             MaterialPageRoute(builder:
                                                 (BuildContext context) {
