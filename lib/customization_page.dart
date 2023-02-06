@@ -62,27 +62,25 @@ class CustomizationPage extends StatelessWidget {
                 GridView.builder(
                   itemCount: themesModel.shopThemesList.length,
                   primary: false,
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(8),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8),
                   itemBuilder: (context, index) => Card(
                       color: themesModel.shopThemesList[index].color,
                       child: GridTile(
                           child: Center(
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   children: [
-                            const Padding(padding: EdgeInsets.all(8)),
+                            const Padding(padding: EdgeInsets.all(2)),
                             Text(
                               (themesModel.shopThemesList[index].themeName),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20.0,
-                              ),
                             ),
-                            Text(themesModel.shopThemesList[index].price),
+                            Text((themesModel.shopThemesList[index].price) +
+                                ' coins'),
                           ])))),
                 ),
                 GridView.builder(
@@ -91,8 +89,8 @@ class CustomizationPage extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10),
+                      crossAxisSpacing: 8,
+                      mainAxisSpacing: 8),
                   itemBuilder: (context, index) => Card(
                       color: themesModel.myThemes[index].color,
                       child: GridTile(
@@ -100,12 +98,11 @@ class CustomizationPage extends StatelessWidget {
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                            const Padding(padding: EdgeInsets.all(8)),
+                            const Padding(padding: EdgeInsets.all(2)),
                             Text(
                               (themesModel.myThemes[index].themeName),
                               style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20.0,
+                                fontSize: 15.0,
                               ),
                             ),
                           ])))),
