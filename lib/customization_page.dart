@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:polylingo_app/providers/currency.dart';
+import 'package:polylingo_app/providers/themes.dart';
 import 'package:provider/provider.dart';
 
 class CustomizationPageWrapper extends StatefulWidget {
@@ -29,6 +30,7 @@ class CustomizationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final myCurrency = Provider.of<MyCurrency>(context);
+    final themesModel = Provider.of<ThemesModel>(context);
     return DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -57,24 +59,56 @@ class CustomizationPage extends StatelessWidget {
             ),
             body: TabBarView(
               children: <Widget>[
-                Center(
-                    child: GridView.extent(
+                GridView.builder(
+                  itemCount: themesModel.shopThemesList.length,
                   primary: false,
                   padding: const EdgeInsets.all(16),
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  maxCrossAxisExtent: 200.0,
-                  children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child:
-                          const Text('First', style: TextStyle(fontSize: 20)),
-                      color: Colors.yellow,
-                    ),
-                  ],
-                )),
-                const Center(
-                  child: Text('My Themes'),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10),
+                  itemBuilder: (context, index) => Card(
+                      color: themesModel.shopThemesList[index].color,
+                      child: GridTile(
+                          child: Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                            const Padding(padding: EdgeInsets.all(8)),
+                            Text(
+                              (themesModel.shopThemesList[index].themeName),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0,
+                              ),
+                            ),
+                            Text(themesModel.shopThemesList[index].price),
+                          ])))),
+                ),
+                GridView.builder(
+                  itemCount: themesModel.myThemes.length,
+                  primary: false,
+                  padding: const EdgeInsets.all(16),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10),
+                  itemBuilder: (context, index) => Card(
+                      color: themesModel.myThemes[index].color,
+                      child: GridTile(
+                          child: Center(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                            const Padding(padding: EdgeInsets.all(8)),
+                            Text(
+                              (themesModel.myThemes[index].themeName),
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0,
+                              ),
+                            ),
+                          ])))),
                 ),
               ],
             )));

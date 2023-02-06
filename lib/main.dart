@@ -3,6 +3,7 @@ import 'package:polylingo_app/customization_page.dart';
 import 'package:polylingo_app/home_page.dart';
 import 'package:polylingo_app/providers/currency.dart';
 import 'package:polylingo_app/providers/lives.dart';
+import 'package:polylingo_app/providers/themes.dart';
 import 'package:polylingo_app/review_page.dart';
 import 'package:provider/provider.dart';
 
@@ -11,6 +12,7 @@ void main() {
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (context) => MyCurrency()),
       ChangeNotifierProvider(create: (context) => Lives()),
+      ChangeNotifierProvider(create: (context) => ThemesModel()),
     ], child: const MyApp()),
   );
 }
