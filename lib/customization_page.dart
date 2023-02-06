@@ -2,6 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:polylingo_app/providers/currency.dart';
 import 'package:provider/provider.dart';
 
+class CustomizationPageWrapper extends StatefulWidget {
+  const CustomizationPageWrapper({Key? key}) : super(key: key);
+
+  @override
+  _CustomizationPageWrapperState createState() =>
+      _CustomizationPageWrapperState();
+}
+
+class _CustomizationPageWrapperState extends State<CustomizationPageWrapper> {
+  @override
+  void initState() {
+    super.initState();
+    final myCurrency = Provider.of<MyCurrency>(context, listen: false);
+    myCurrency.loadCounter();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const CustomizationPage();
+  }
+}
+
 class CustomizationPage extends StatelessWidget {
   const CustomizationPage({Key? key}) : super(key: key);
   @override
@@ -48,34 +70,6 @@ class CustomizationPage extends StatelessWidget {
                       child:
                           const Text('First', style: TextStyle(fontSize: 20)),
                       color: Colors.yellow,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child:
-                          const Text('Second', style: TextStyle(fontSize: 20)),
-                      color: Colors.blue,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child:
-                          const Text('Third', style: TextStyle(fontSize: 20)),
-                      color: Colors.blue,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Four', style: TextStyle(fontSize: 20)),
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child:
-                          const Text('Fifth', style: TextStyle(fontSize: 20)),
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Six', style: TextStyle(fontSize: 20)),
-                      color: Colors.blue,
                     ),
                   ],
                 )),
