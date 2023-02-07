@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
     final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Scaffold(
       appBar: AppBar(
+        leading: Image.asset('images/Polylingo_logo.png'),
         title: const Text("Polylingo App"),
       ),
       body: Column(
