@@ -24,9 +24,8 @@ class ThemesModel with ChangeNotifier {
     ShopTheme(themeName: 'Orange', color: Colors.orange, price: 'bought'),
     ShopTheme(themeName: 'Amber', color: Colors.amber, price: 'bought'),
     ShopTheme(themeName: 'Yellow', color: Colors.yellow, price: 'bought'),
-    ShopTheme(themeName: 'Lime', color: Colors.limeAccent, price: 'bought'),
-    ShopTheme(
-        themeName: 'L.Green', color: Colors.lightGreenAccent, price: 'bought'),
+    ShopTheme(themeName: 'Lime', color: Colors.lime, price: 'bought'),
+    ShopTheme(themeName: 'L.Green', color: Colors.lightGreen, price: 'bought'),
     ShopTheme(themeName: 'Teal', color: Colors.teal, price: 'bought'),
     ShopTheme(themeName: 'Cyan', color: Colors.cyan, price: 'bought'),
     ShopTheme(themeName: 'L.Blue', color: Colors.lightBlue, price: 'bought'),
