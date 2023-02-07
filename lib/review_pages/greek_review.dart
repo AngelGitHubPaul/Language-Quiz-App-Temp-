@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/themes.dart';
 
 List<String> greek = [
   "Α α",
@@ -58,6 +61,7 @@ class GreekReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Greek'),
@@ -81,8 +85,8 @@ class GreekReviewPage extends StatelessWidget {
                         children: [
               Text(
                 (greek[index]),
-                style: const TextStyle(
-                  color: Colors.pink,
+                style: TextStyle(
+                  color: theme,
                   fontSize: 20.0,
                 ),
               ),

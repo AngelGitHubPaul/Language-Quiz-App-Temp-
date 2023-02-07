@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // Application name
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       // Application theme data, you can set the colors for the application as
       // you want
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: theme.color,
       ),
       // A widget which will be started on application startup
       home: const Trial(),

@@ -69,19 +69,21 @@ class CustomizationPage extends StatelessWidget {
                       mainAxisSpacing: 8),
                   itemBuilder: (context, index) => Card(
                       color: themesModel.shopThemesList[index].color,
-                      child: GridTile(
-                          child: Center(
-                              child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                            const Padding(padding: EdgeInsets.all(2)),
-                            Text(
-                              (themesModel.shopThemesList[index].themeName),
-                            ),
-                            Text((themesModel.shopThemesList[index].price) +
-                                ' coins'),
-                          ])))),
+                      child: InkWell(
+                        onTap: () {},
+                        child: GridTile(
+                            child: Center(
+                                child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                              const Padding(padding: EdgeInsets.all(2)),
+                              Text(
+                                (themesModel.shopThemesList[index].themeName),
+                              ),
+                              Text(themesModel.shopThemesList[index].price),
+                            ]))),
+                      )),
                 ),
                 GridView.builder(
                   itemCount: themesModel.myThemes.length,
@@ -93,19 +95,24 @@ class CustomizationPage extends StatelessWidget {
                       mainAxisSpacing: 8),
                   itemBuilder: (context, index) => Card(
                       color: themesModel.myThemes[index].color,
-                      child: GridTile(
-                          child: Center(
-                              child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                            const Padding(padding: EdgeInsets.all(2)),
-                            Text(
-                              (themesModel.myThemes[index].themeName),
-                              style: const TextStyle(
-                                fontSize: 15.0,
+                      child: InkWell(
+                        onTap: () {
+                          themesModel.replaceTheme(themesModel.myThemes[index]);
+                        },
+                        child: GridTile(
+                            child: Center(
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                              const Padding(padding: EdgeInsets.all(2)),
+                              Text(
+                                (themesModel.myThemes[index].themeName),
+                                style: const TextStyle(
+                                  fontSize: 15.0,
+                                ),
                               ),
-                            ),
-                          ])))),
+                            ]))),
+                      )),
                 ),
               ],
             )));

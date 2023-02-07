@@ -4,6 +4,9 @@ import 'package:polylingo_app/quiz_pages/hangul_quiz.dart';
 import 'package:polylingo_app/quiz_pages/hiragana_quiz.dart';
 import 'package:polylingo_app/quiz_pages/katakana_quiz.dart';
 import 'package:polylingo_app/quiz_pages/russian_quiz.dart';
+import 'package:provider/provider.dart';
+
+import 'providers/themes.dart';
 
 class Languages {
   final String lang;
@@ -50,6 +53,7 @@ class LanguageOptions extends StatelessWidget {
   const LanguageOptions({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return GridView.builder(
       itemCount: languages.length,
       gridDelegate:
@@ -122,8 +126,8 @@ class LanguageOptions extends StatelessWidget {
                     children: [
               Text(
                 (languages[index].lang),
-                style: const TextStyle(
-                  color: Colors.pink,
+                style: TextStyle(
+                  color: theme,
                   fontSize: 40.0,
                 ),
               ),

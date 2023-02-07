@@ -3,6 +3,7 @@ import 'package:polylingo_app/main.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/lives.dart';
+import '../../providers/themes.dart';
 
 class VictoryPage extends StatefulWidget {
   const VictoryPage({Key? key}) : super(key: key);
@@ -41,19 +42,20 @@ class DefeatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int mistakes = 3 - Provider.of<Lives>(context).lives;
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Row(
-            children: const [
+            children: [
               Expanded(
                 flex: 2,
                 child: Text(
                   "Good Job! You Have Answered All of the Questions!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 45.0),
+                  style: TextStyle(color: theme, fontSize: 45.0),
                 ),
               ),
             ],
@@ -85,7 +87,7 @@ class DefeatScreen extends StatelessWidget {
                           ? "+13 Gold"
                           : "+10 Gold",
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 30.0),
+                  style: TextStyle(color: theme, fontSize: 30.0),
                 ),
               ),
             ],

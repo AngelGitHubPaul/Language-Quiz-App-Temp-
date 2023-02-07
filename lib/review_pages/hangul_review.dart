@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/themes.dart';
 
 List<String> hangul = [
   "ㄱ",
@@ -90,6 +93,7 @@ class HangulReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hangul'),
@@ -113,8 +117,8 @@ class HangulReviewPage extends StatelessWidget {
                         children: [
               Text(
                 (hangul[index]),
-                style: const TextStyle(
-                  color: Colors.pink,
+                style: TextStyle(
+                  color: theme,
                   fontSize: 20.0,
                 ),
               ),

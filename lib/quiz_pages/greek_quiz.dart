@@ -6,6 +6,7 @@ import 'package:polylingo_app/quiz_pages/results_pages/victory_page.dart';
 import 'package:provider/provider.dart';
 import '../providers/currency.dart';
 import '../providers/lives.dart';
+import '../providers/themes.dart';
 
 var rng = Random();
 
@@ -119,6 +120,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
   @override
   Widget build(BuildContext context) {
     int lives = Provider.of<Lives>(context).lives;
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
@@ -157,8 +159,8 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                               children: [
                                 Text(
                                   greek[rngIndex[index].toInt()],
-                                  style: const TextStyle(
-                                    color: Colors.pink,
+                                  style: TextStyle(
+                                    color: theme,
                                     fontSize: 75.0,
                                   ),
                                 ),

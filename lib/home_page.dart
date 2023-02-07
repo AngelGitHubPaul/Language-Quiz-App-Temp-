@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:polylingo_app/quiz_page.dart';
+import 'package:provider/provider.dart';
+
+import 'providers/themes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Polylingo App"),
@@ -12,12 +16,12 @@ class HomePage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          const Text(
+          Text(
             'Are you ready to test your Language reading skills?',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.pink,
+              color: theme,
               fontSize: 25.0,
             ),
           ),

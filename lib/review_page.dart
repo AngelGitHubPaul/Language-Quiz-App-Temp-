@@ -4,6 +4,9 @@ import 'package:polylingo_app/review_pages/hangul_review.dart';
 import 'package:polylingo_app/review_pages/hiragana_review.dart';
 import 'package:polylingo_app/review_pages/katakana_review.dart';
 import 'package:polylingo_app/review_pages/russian_review.dart';
+import 'package:provider/provider.dart';
+
+import 'providers/themes.dart';
 
 class Languages {
   final String lang;
@@ -26,6 +29,7 @@ class ReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Choose which to review"),
@@ -102,8 +106,8 @@ class ReviewPage extends StatelessWidget {
                       children: [
                 Text(
                   (languages[index].lang),
-                  style: const TextStyle(
-                    color: Colors.pink,
+                  style: TextStyle(
+                    color: theme,
                     fontSize: 40.0,
                   ),
                 ),

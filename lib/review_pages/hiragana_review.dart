@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/themes.dart';
 
 class Hiragana {
   final String jp;
@@ -123,6 +126,7 @@ class HiraganaReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hiragana'),
@@ -146,8 +150,8 @@ class HiraganaReviewPage extends StatelessWidget {
                         children: [
               Text(
                 (hiragana[index].jp),
-                style: const TextStyle(
-                  color: Colors.pink,
+                style: TextStyle(
+                  color: theme,
                   fontSize: 20.0,
                 ),
               ),

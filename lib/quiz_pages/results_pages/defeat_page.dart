@@ -3,6 +3,7 @@ import 'package:polylingo_app/main.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/lives.dart';
+import '../../providers/themes.dart';
 
 class DefeatPage extends StatefulWidget {
   const DefeatPage({Key? key}) : super(key: key);
@@ -40,19 +41,20 @@ class DefeatScreen extends StatelessWidget {
   const DefeatScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemesModel>(context).selectedThemes[0].color;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Row(
-            children: const [
+            children: [
               Expanded(
                 flex: 2,
                 child: Text(
                   "You Have Run Out of Hearts",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 45.0),
+                  style: TextStyle(color: theme, fontSize: 45.0),
                 ),
               ),
             ],
