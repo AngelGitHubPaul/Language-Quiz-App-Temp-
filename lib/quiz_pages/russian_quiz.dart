@@ -97,9 +97,20 @@ class _RussianQuizPageState extends State<RussianQuizPage> {
         ),
         actions: [
           IconButton(
-              onPressed: () {
-                debugPrint('Actions');
-              },
+              onPressed: () => showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text('Tutorial'),
+                      content: const Text(
+                          'You are given 3 hearts at the start. Answer 10 questions right and get coins depending on how much mistakes you have made. The coins you gain can be used to buy different themes in Customization page.'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'OK'),
+                          child: const Text('OK'),
+                        ),
+                      ],
+                    ),
+                  ),
               icon: const Icon(
                 Icons.question_mark_rounded,
               )),
