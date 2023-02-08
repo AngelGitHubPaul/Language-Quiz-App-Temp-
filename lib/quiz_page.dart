@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:polylingo_app/quiz_pages/baybayin_quiz.dart';
 import 'package:polylingo_app/quiz_pages/greek_quiz.dart';
 import 'package:polylingo_app/quiz_pages/hangul_quiz.dart';
 import 'package:polylingo_app/quiz_pages/hiragana_quiz.dart';
@@ -18,7 +19,7 @@ class Languages {
 final List<Languages> languages = [
   Languages(lang: 'あ', en: 'Hiragana'),
   Languages(lang: 'ア', en: 'Katakana'),
-  Languages(lang: 'ᜀ', en: 'Alibata'),
+  Languages(lang: 'ᜀ', en: 'Baybayin'),
   Languages(lang: '아', en: 'Hangul'),
   Languages(lang: 'Бб', en: 'Russian'),
   Languages(lang: 'Α α', en: 'Greek'),
@@ -79,6 +80,17 @@ class LanguageOptions extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (BuildContext context) {
                       return const KatakanaQuizPage();
+                    },
+                  ),
+                );
+              }
+              break;
+            case 2:
+              {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return const BaybayinQuizPage();
                     },
                   ),
                 );

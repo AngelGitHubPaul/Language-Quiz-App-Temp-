@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:polylingo_app/review_pages/baybayin_review.dart';
 import 'package:polylingo_app/review_pages/greek_review.dart';
 import 'package:polylingo_app/review_pages/hangul_review.dart';
 import 'package:polylingo_app/review_pages/hiragana_review.dart';
@@ -18,7 +19,7 @@ class Languages {
 final List<Languages> languages = [
   Languages(lang: 'あ', en: 'Hiragana'),
   Languages(lang: 'ア', en: 'Katakana'),
-  Languages(lang: 'ᜀ', en: 'Alibata'),
+  Languages(lang: 'ᜀ', en: 'Baybayin'),
   Languages(lang: '아', en: 'Hangul'),
   Languages(lang: 'Бб', en: 'Russian'),
   Languages(lang: 'Α α', en: 'Greek'),
@@ -59,6 +60,17 @@ class ReviewPage extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (BuildContext context) {
                         return const KatakanaReviewPage();
+                      },
+                    ),
+                  );
+                }
+                break;
+              case 2:
+                {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return const BaybayinReviewPage();
                       },
                     ),
                   );
